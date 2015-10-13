@@ -1,0 +1,3 @@
+[run]
+include = wyvern/*
+omit = *migrations*
