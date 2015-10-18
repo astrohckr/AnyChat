@@ -6,3 +6,7 @@ from wyvern.chat.models import Group
 
 class GroupList(ListView):
     model = Group
+
+
+class CategoryList(ListView):
+    model = Group

@@ -10,9 +10,9 @@ urlpatterns = [
         view=views.GroupList.as_view(),
         name='list'
     ),
-    url(
-        regex=r'^/add/$',
-        view=views.GroupList.as_view(),
-        name='list'
-    ),
+    # url(
+    #     regex=r'^(?P<category>.+)/$',
+    #     view=views.GroupList.as_view(),
+    #     name='add'
+    # ),
 ]
