@@ -99,10 +99,12 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres:///wyvern"),
+    # 'default': env.db("DATABASE_URL", default="postgres:///wyvern"),
+    'default': {'ENGINE': 'django.db.backends.sqlite3'}
+
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
-DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+# DATABASES['default']['ENGINE'] =
 
 
 # GENERAL CONFIGURATION

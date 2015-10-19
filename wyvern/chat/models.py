@@ -17,6 +17,7 @@ class Category(models.Model):
 @python_2_unicode_compatible
 class Group(models.Model):
     category = models.ForeignKey(Category)
+    # id = models.CharField(max_length=30, primary_key=True)
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=255, default='')
 
