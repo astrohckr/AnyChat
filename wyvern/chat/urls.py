@@ -7,12 +7,22 @@ from wyvern.chat import views
 urlpatterns = [
     url(
         regex=r'^$',
-        view=views.GroupList.as_view(),
+        view=views.CategoryList.as_view(),
         name='list'
     ),
-    # url(
-    #     regex=r'^(?P<category>.+)/$',
-    #     view=views.GroupList.as_view(),
-    #     name='add'
-    # ),
+    url(
+        regex=r'^(?P<name>\w+)/$',
+        view=views.CategoryDetail.as_view(),
+        name='detail'
+    ),
+    url(
+        regex=r'^\w+/create',
+        view=views.CreateGroup.as_view(),
+        name='detail'
+    ),
+    url(
+        regex=r'^\w+/(?P<name>\w+)$',
+        view=views.GroupDetail.as_view(),
+        name='detail'
+    ),
 ]

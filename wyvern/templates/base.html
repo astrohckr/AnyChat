@@ -16,11 +16,13 @@
     {% block css %}
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
 
         <!-- Your stuff: Third-party css libraries go here -->
 
         <!-- This file store project specific CSS -->
         <link href="{% static 'css/project.css' %}" rel="stylesheet">
+        <link href="{% static 'css/category_list.css' %}" rel="stylesheet">
     {% endblock %}
 </head>
 
@@ -49,7 +51,7 @@
     </nav>
 </div>
 
-<div class="container">
+<div class="container-fluid">
 
     {% if messages %}
         {% for message in messages %}
@@ -58,28 +60,21 @@
     {% endif %}
 
     {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
     {% endblock content %}
 
 </div>
-<!-- /container -->
 
 {% block modal %}{% endblock modal %}
 
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 {% block javascript %}
-    <!-- Latest JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 
     <!-- Your stuff: Third-party javascript libraries go here -->
 
     <!-- place project specific Javascript in this file -->
     <script src="{% static 'js/project.js' %}"></script>
+    <script src="{% static 'js/category_list.js' %}"></script>
 {% endblock javascript %}
 </body>
 </html>

@@ -22,6 +22,7 @@ class GroupAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['name']}),
         (None, {'fields': ['category']}),
+        (None, {'fields': ['description']}),
     ]
     list_display = ('name', 'category')
 
