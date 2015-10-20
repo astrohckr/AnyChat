@@ -1,6 +1,6 @@
 import os
 from django.contrib.gis.utils import LayerMapping
-from wyvern.geo.models import WorldBorder
+from wyvern.world.models import WorldBorder
 
 world_mapping = {
     'fips': 'FIPS',
@@ -17,11 +17,10 @@ world_mapping = {
     'mpoly': 'MULTIPOLYGON',
 }
 
-world_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data', 'TM_WORLD_BORDERS-0.3.shp'))
+# world_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data', 'TM_WORLD_BORDERS-0.3.shp'))
+world_shp = '/home/ryan/code/python/wyvern/wyvern/world/data/TM_WORLD_BORDERS-0.3.shp'
 
 
 def run(verbose=True):
-    lm = LayerMapping(WorldBorder, world_shp, world_mapping,
-                      transform=False, encoding='iso-8859-1')
-
+    lm = LayerMapping(WorldBorder, world_shp, world_mapping, transform=False, encoding='iso-8859-1')
     lm.save(strict=True, verbose=verbose)

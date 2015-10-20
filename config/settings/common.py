@@ -9,6 +9,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from __future__ import absolute_import, unicode_literals
+import os
 
 import environ
 
@@ -43,7 +44,7 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     'wyvern.chat',
     'wyvern.users',
-    'wyvern.geo',
+    'wyvern.world',
     # Your stuff: custom apps go here
 )
 
@@ -99,12 +100,10 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    # 'default': env.db("DATABASE_URL", default="postgres:///wyvern"),
-    'default': {'ENGINE': 'django.db.backends.sqlite3'}
-
+    'default': env.db("DATABASE_URL", default="postgres:///wyvern"),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
-# DATABASES['default']['ENGINE'] =
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 
 # GENERAL CONFIGURATION
