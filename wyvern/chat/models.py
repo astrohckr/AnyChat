@@ -3,7 +3,6 @@ from __future__ import unicode_literals, absolute_import
 
 from django.contrib.auth.models import AbstractUser
 from django.contrib.gis.db import models
-from django.contrib.gis.geos.point import Point
 from django.utils.encoding import python_2_unicode_compatible
 
 
