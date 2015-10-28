@@ -20,48 +20,37 @@ env = environ.Env()
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
-DJANGO_APPS = (
-    # Default Django apps:
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.gis',
+DJANGO_APPS = ['django.contrib.auth',
+               'django.contrib.contenttypes',
+               'django.contrib.sessions',
+               'django.contrib.sites',
+               'django.contrib.messages',
+               'django.contrib.staticfiles',
+               'django.contrib.gis',
 
-    # Useful template tags:
-    # 'django.contrib.humanize',
+               # Useful template tags:
+               # 'django.contrib.humanize',
 
-    # Admin
-    'django.contrib.admin',
-)
-THIRD_PARTY_APPS = (
-    'crispy_forms',  # Form layouts
-)
+               # Admin
+               'django.contrib.admin', ]
+THIRD_PARTY_APPS = ['crispy_forms', ]
 
 # Apps specific for this project go here.
-LOCAL_APPS = (
-    'wyvern.chat',
-    'wyvern.users',
-    'wyvern.world',
-    # Your stuff: custom apps go here
-)
+LOCAL_APPS = ['wyvern.chat',
+              'wyvern.users',
+              'wyvern.world', ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES = (
-    # Make sure djangosecure.middleware.SecurityMiddleware is listed first
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+MIDDLEWARE_CLASSES = ['django.contrib.sessions.middleware.SessionMiddleware',
+                      'django.middleware.common.CommonMiddleware',
+                      'django.middleware.csrf.CsrfViewMiddleware',
+                      'django.contrib.auth.middleware.AuthenticationMiddleware',
+                      'django.contrib.messages.middleware.MessageMiddleware',
+                      'django.middleware.clickjacking.XFrameOptionsMiddleware', ]
 
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -77,9 +66,7 @@ DEBUG = env.bool("DJANGO_DEBUG", False)
 # FIXTURE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
-FIXTURE_DIRS = (
-    str(APPS_DIR.path('fixtures')),
-)
+FIXTURE_DIRS = [str(APPS_DIR.path('fixtures')), ]
 
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -88,9 +75,7 @@ FIXTURE_DIRS = (
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = (
-    ("""Ryan Mirman""", 'rsgm123@gmail.com'),
-)
+ADMINS = [("""Ryan Mirman""", 'rsgm123@gmail.com'), ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
@@ -177,15 +162,11 @@ STATIC_ROOT = str(ROOT_DIR('staticfiles'))
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (
-    str(APPS_DIR.path('static')),
-)
+STATICFILES_DIRS = [str(APPS_DIR.path('static')), ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
+STATICFILES_FINDERS = ['django.contrib.staticfiles.finders.FileSystemFinder',
+                       'django.contrib.staticfiles.finders.AppDirectoriesFinder', ]
 
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -204,10 +185,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
+                           'allauth.account.auth_backends.AuthenticationBackend', ]
 
 # Some really nice defaults
 
