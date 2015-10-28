@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}{% load i18n %}
+{% block title %}Groups{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+
+        <h2>Groups</h2>
+
+        <form action="{% url 'chat:group_form' category.id %}" method="post">
+            <label for="your_name">Your name: </label>
+            <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+            <input type="submit" value="OK">
+        </form>
+
+        {#        <script type="application/javascript">#}
+        {#            $("#add-group").post('');#}
+        {#        </script>#}
+    </div>
+{% endblock content %}

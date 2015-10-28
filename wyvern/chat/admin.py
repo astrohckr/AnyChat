@@ -10,24 +10,24 @@ from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from .models import Category, Group
 
 
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None, {'fields': ['name']}),
-    ]
+# @admin.register(Category)
+# class CategoryAdmin(admin.ModelAdmin):
+#     fieldsets = [
+#         (None, {'fields': ['name']}),
+#     ]
+#
+#
+# @admin.register(Group)
+# class GroupAdmin(admin.ModelAdmin):
+#     fieldsets = [
+#         (None, {'fields': ['name']}),
+#         (None, {'fields': ['category']}),
+#         (None, {'fields': ['description']}),
+#     ]
+#     list_display = ('name', 'category')
 
-
-@admin.register(Group)
-class GroupAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None, {'fields': ['name']}),
-        (None, {'fields': ['category']}),
-        (None, {'fields': ['description']}),
-    ]
-    list_display = ('name', 'category')
-
-# admin.site.register(Category, CategoryAdmin)
-# admin.site.register(Group, GroupAdmin)
+admin.site.register(Category)
+admin.site.register(Group)
 
 #
 # class GroupChangeForm(admin.ModelAdmin):

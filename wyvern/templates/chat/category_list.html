@@ -7,7 +7,7 @@
     <div class="category-list row-fluid">
         {% for category in category_list %}
             <div>
-                <a href="{% url 'chat:detail' category.name %}">
+                <a href="{% url 'chat:detail' category.id %}">
                     <h2>{{ category.name }}</h2>
                 </a>
 
