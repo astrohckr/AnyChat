@@ -58,15 +58,16 @@ INSTALLED_APPS += ('django_extensions', )
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#         'NAME': 'wyvern',
-#         'HOST': '138.87.178.144',
-#         'PORT': '5432',
-#         'ATOMIC_REQUESTS': True,
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'wyvern',
+        'USER': 'ryan',
+        'HOST': '138.87.178.144',
+        'PORT': '5432',
+        'ATOMIC_REQUESTS': True,
+    }
+}
 
 # TESTING
 # ------------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals, absolute_import
-from Tools.scripts.texi2html import increment
+
 from math import floor
 
 from django.contrib.auth.models import AbstractUser
