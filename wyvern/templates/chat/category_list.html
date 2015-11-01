@@ -1,13 +1,22 @@
 {% extends "base.html" %}
 
 {% load static %}{% load i18n %}
+
+{% block extrascripts %}
+    <link href="{% static 'css/category_list.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block extraendscripts %}
+    <script src="{% static 'js/category_list.js' %}"></script>
+{% endblock %}
+
 {% block title %}Groups{% endblock %}
 
 {% block content %}
     <div class="category-list row-fluid">
         {% for category in category_list %}
             <div>
-                <a href="{% url 'chat:detail' category.id %}">
+                <a href="{% url 'chat:categoryDetail' category.name %}">
                     <h2>{{ category.name }}</h2>
                 </a>
 
@@ -24,7 +33,7 @@
                     {% endfor %}
 
                     <a class="add-group joinable-group col-md-offset-1 col-md-2 thumbnail"
-                       {#href="{% url 'chat:create' category.name %}"#}>
+                       href="{% url 'chat:groupCreate' category.name %}">
                         <h4 class="glyphicon glyphicon-plus"></h4>
                     </a>
                 </div>

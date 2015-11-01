@@ -22,7 +22,7 @@
 
         <!-- This file store project specific CSS -->
         <link href="{% static 'css/project.css' %}" rel="stylesheet">
-        <link href="{% static 'css/category_list.css' %}" rel="stylesheet">
+        {% block extrascripts %}{% endblock extrascripts %}
     {% endblock %}
 </head>
 
@@ -74,7 +74,7 @@
 
     <!-- place project specific Javascript in this file -->
     <script src="{% static 'js/project.js' %}"></script>
-    <script src="{% static 'js/category_list.js' %}"></script>
+    {% block extraendscripts %}{% endblock extraendscripts %}
 {% endblock javascript %}
 </body>
 </html>

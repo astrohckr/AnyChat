@@ -11,18 +11,18 @@ urlpatterns = [
         name='list'
     ),
     url(
-        regex=r'^(?P<id>\w+)/$',
+        regex=r'^(?P<name>\w+)/$',
         view=views.CategoryDetail.as_view(),
-        name='detail'
+        name='categoryDetail'
     ),
     url(
-        regex=r'^\w+/create',
-        view=views.CreateGroup.as_view(),
-        name='create'
+        regex=r'^(?P<category_name>\w+)/create$',
+        view=views.GroupCreate.as_view(),
+        name='groupCreate'
     ),
-    # url(
-    #     regex=r'^\w+/(?P<name>\w+)$',
-    #     view=views.GroupDetail.as_view(),
-    #     name='detail'
-    # ),
+    url(
+        regex=r'^\w+/(?P<id>\w+)$',
+        view=views.GroupDetail.as_view(),
+        name='groupDetail'
+    ),
 ]

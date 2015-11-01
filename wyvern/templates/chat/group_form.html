@@ -9,14 +9,9 @@
 
         <h2>Groups</h2>
 
-        <form action="{% url 'chat:group_form' category.id %}" method="post">
-            <label for="your_name">Your name: </label>
-            <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-            <input type="submit" value="OK">
+        <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-primary" value="Create"/>
         </form>
-
-        {#        <script type="application/javascript">#}
-        {#            $("#add-group").post('');#}
-        {#        </script>#}
     </div>
 {% endblock content %}
