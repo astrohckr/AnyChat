@@ -1,30 +1,65 @@
 {% extends "base.html" %}
+
+{% load static %}{% load i18n %}
+
+{% block extrascripts %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
-    <html>
-    <body>
-    <style>
-        body {
-            background-image: url(http://cc0.photo/wp-content/uploads/2015/07/D%C3%BCsseldorf-at-night-No.1.jpg);
-            background-size: 1550px 750px;
-            background-repeat: no-repeat;
-        }
-    </style>
-    <head>
-        <style>
-            h1 {
-                padding-top: 100px;
-                color: #ffffff;
-                font-family: Copperplate Gothic Light;
-                font-size: 600%;
-            }h2 {
-                padding-top: 100px;
-                color: #ffffff;
-                font-family: Copperplate Gothic Light;
-            }
-        </style>
-    </head>
-    <h1 align="center">Wyvern</h1>
-    <h2 align="center">High Ryan is gay.</h2>
-    </body>
-    </html>
+    <div id="title" class="section">
+        <h1 class="text-center">Wyvern</h1>
+
+        <div class="row-magic">
+            <h5 class="span">Friendly</h5>
+            <h5 class="span">Random</h5>
+            <h5 class="span">Local</h5>
+        </div>
+    </div>
+    <div id="" class="about section">
+        <div class="row stack-break-2">
+            <p class="span-3">
+                Quisque commodo imperdiet fringilla. Nulla eget erat ipsum. Cras vestibulum quis lorem at facilisis. Nam
+                gravida ante sed nibh facilisis, eget efficitur quam posuere. In ultrices nisl lectus, id pretium ipsum
+                accumsan dapibus. Aliquam erat volutpat. Nam fringilla tellus eget sodales tristique.
+            </p>
+
+            <div class="span-9">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum odio metus, ultrices in nisl a,
+                    vehicula molestie ipsum. Cras eu dolor mollis est gravida rhoncus. Nunc sit amet massa orci. Ut at
+                    massa
+                    ipsum. Nullam ullamcorper velit a sapien rutrum tristique. Etiam aliquet erat commodo magna varius,
+                    ac
+                    scelerisque odio imperdiet. Mauris dictum, mi eu auctor blandit, mauris nisl fermentum lectus, nec
+                    ultricies arcu sem ac enim. Nulla consequat cursus quam, ut finibus justo efficitur in. Aliquam ac
+                    ligula neque. Donec cursus, velit id blandit laoreet, dolor ex sodales nibh, accumsan fringilla
+                    nulla
+                    sem non velit. Pellentesque luctus volutpat aliquet. Phasellus sagittis enim leo, nec efficitur quam
+                    aliquet id.
+                </p>
+
+                <p>
+                    Vivamus id massa turpis. Nullam convallis dolor justo. Sed sit amet faucibus tortor, et mattis
+                    metus.
+                    Quisque rhoncus turpis eros. Phasellus justo mi, eleifend at aliquam quis, congue vitae neque.
+                    Aliquam
+                    sodales nisl leo, vitae imperdiet felis consectetur quis. Maecenas non scelerisque purus, eu
+                    vehicula
+                    diam. Nullam eu diam lectus. Aliquam id dignissim augue. Quisque feugiat urna et est vestibulum,
+                    quis
+                    facilisis sem tempor. Proin non tortor efficitur, blandit elit vitae, condimentum ante.
+                </p>
+
+                <p>
+                    Aenean non ipsum vel augue egestas tempor et quis felis. Pellentesque nec arcu non arcu tempus
+                    porttitor. Nullam vel tempor nisl. Integer ornare non nibh ut consectetur. Duis at ligula sit amet
+                    erat
+                    ultricies tincidunt. Sed lobortis est at risus euismod rutrum. Nulla efficitur arcu a erat finibus
+                    sollicitudin. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Vestibulum sit amet felis a nulla consequat pellentesque sit amet ut libero.
+                </p>
+            </div>
+        </div>
+    </div>
 {% endblock content %}

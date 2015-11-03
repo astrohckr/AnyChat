@@ -17,6 +17,7 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
         <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'ext/kayzen-gs.min.css' %}">
 
         <!-- Your stuff: Third-party css libraries go here -->
 
@@ -28,7 +29,7 @@
 
 <body>
 
-<div class="m-b">
+<div id="navbar" class="m-b">
     <nav class="navbar navbar-dark navbar-static-top bg-inverse">
         <div class="container">
             <a class="navbar-brand" href="/">Wyvern</a>
@@ -51,17 +52,17 @@
     </nav>
 </div>
 
-<div class="container-fluid">
-
+<div id="error-notification">
     {% if messages %}
         {% for message in messages %}
             <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
         {% endfor %}
     {% endif %}
+</div>
 
+<div id="content">
     {% block content %}
     {% endblock content %}
-
 </div>
 
 {% block modal %}{% endblock modal %}

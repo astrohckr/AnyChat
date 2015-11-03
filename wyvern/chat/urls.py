@@ -16,7 +16,7 @@ urlpatterns = [
         name='categoryDetail'
     ),
     url(
-        regex=r'^(?P<category_name>\w+)/create$',
+        regex=r'^(?P<category>\w+)/create$',
         view=views.GroupCreate.as_view(),
         name='groupCreate'
     ),

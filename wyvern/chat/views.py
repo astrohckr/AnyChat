@@ -25,8 +25,12 @@ class GroupCreate(CreateView):
     model = Group
     fields = ['name', 'description']
 
-    # def __init__(self, *args, **kwargs):
-    #     super(GroupCreate, self).__init__(*args, **kwargs)
-    #
-    #     self.fields['category'].queryset = Category.objects.filter(name=kwargs['category_name'])
-    #     self.fields['url'].queryset = models.next_url()
+    def get_initial(self):
+        category = get_object_or_404(Category, name=self.kwargs.get('category'))
+        url = models.next_url()
+        point = 'POINT(0.0 0.0)'
+        return {
+            'category': category,
+            'url': url,
+            'point': point,
+        }

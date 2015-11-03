@@ -22,7 +22,7 @@ module.exports = function (grunt) {
       images: this.app + '/static/images',
       js: this.app + '/static/js',
       manageScript: 'manage.py',
-      
+
     }
   };
 
@@ -66,7 +66,8 @@ module.exports = function (grunt) {
           },
           files: {
               '<%= paths.css %>/project.css': '<%= paths.sass %>/project.scss',
-              '<%= paths.css %>/category_list.css': '<%= paths.sass %>/category_list.scss'
+              '<%= paths.css %>/category_list.css': '<%= paths.sass %>/category_list.scss',
+              '<%= paths.css %>/home.css': '<%= paths.sass %>/home.scss'
           },
       },
       dist: {
@@ -76,11 +77,13 @@ module.exports = function (grunt) {
               precision: 10
           },
           files: {
-              '<%= paths.css %>/project.css': '<%= paths.sass %>/project.scss'
+              '<%= paths.css %>/project.css': '<%= paths.sass %>/project.scss',
+              '<%= paths.css %>/category_list.css': '<%= paths.sass %>/category_list.scss',
+              '<%= paths.css %>/home.css': '<%= paths.sass %>/home.scss'
           },
       }
     },
-    
+
     //see https://github.com/nDmitry/grunt-postcss
     postcss: {
       options: {
@@ -114,7 +117,7 @@ module.exports = function (grunt) {
       runDjango: {
         cmd: 'python <%= paths.manageScript %> runserver'
       },
-      
+
     }
   });
 
@@ -131,5 +134,5 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'build'
   ]);
-  
+
 };
