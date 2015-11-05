@@ -16,12 +16,12 @@ urlpatterns = [
         name='categoryDetail'
     ),
     url(
-        regex=r'^(?P<category>\w+)/create$',
+        regex=r'^(?P<category>\w+)/create-group$',
         view=views.GroupCreate.as_view(),
         name='groupCreate'
     ),
     url(
-        regex=r'^\w+/(?P<id>\w+)$',
+        regex=r'^\w+/(?P<slug>\w+)$',
         view=views.GroupDetail.as_view(),
         name='groupDetail'
     ),

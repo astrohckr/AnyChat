@@ -24,13 +24,15 @@ class GroupDetail(DetailView):
 class GroupCreate(CreateView):
     model = Group
     fields = ['name', 'description']
+    success_url = '/%(category)s/%(slug)s'
 
-    def get_initial(self):
-        category = get_object_or_404(Category, name=self.kwargs.get('category'))
-        url = models.next_url()
-        point = 'POINT(0.0 0.0)'
-        return {
-            'category': category,
-            'url': url,
-            'point': point,
-        }
+    def form_valid(self, form):
+        form.instance.category = get_object_or_404(Category, name=self.kwargs.get('category'))
+        form.instance.url = models.next_slug()
+        form.instance.point = 'POINT(0.0 0.0)'
+        return super(GroupCreate, self).form_valid(form)
+
+        # def get_success_url(self):
+        #     category = self.object.category.name
+        #     group = self.object.slug
+        #     return '/%s/%s' % ("s", "")

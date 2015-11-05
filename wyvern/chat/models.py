@@ -18,7 +18,7 @@ class Category(models.Model):
         return self.name
 
 
-def next_url():
+def next_slug():
     a_0 = Group.objects.count()
     rs = []  # remainders
     url = ""
@@ -42,7 +42,7 @@ def next_url():
 @python_2_unicode_compatible
 class Group(models.Model):
     category = models.ForeignKey(Category)
-    url = models.CharField(max_length=10, unique=True)
+    slug = models.CharField(max_length=10, unique=True)
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=255, default='Description')
     closed = models.BooleanField(default=False)
