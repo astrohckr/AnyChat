@@ -65,7 +65,7 @@ module.exports = function (grunt) {
                     precision: 10
                 },
                 files: {
-                    '<%= paths.css %>/project.css': '<%= paths.sass %>/main.scss'
+                    '<%= paths.css %>/build.css': '<%= paths.sass %>/main.scss'
                 },
             },
             dist: {
@@ -75,7 +75,7 @@ module.exports = function (grunt) {
                     precision: 10
                 },
                 files: {
-                    '<%= paths.css %>/project.css': '<%= paths.sass %>/main.scss'
+                    '<%= paths.css %>/build.css': '<%= paths.sass %>/main.scss'
                 }
             }
         },
