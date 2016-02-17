@@ -70,12 +70,12 @@ recordings/*/*
 
 # Static files
 staticfiles/
-wyvern/static/sass/build.scss
-wyvern/static/css/build.css
+anychat/static/sass/build.scss
+anychat/static/css/build.css
 
 
 #Production Files
 .env
 .env.sh
 config/settings/production.py
-wyvern.db
+anychat.db

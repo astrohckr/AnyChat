@@ -61,7 +61,7 @@ INSTALLED_APPS += ('django_extensions',)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': './wyvern.db',
+        'NAME': './anychat.db',
         'ATOMIC_REQUESTS': True,
         'OPTIONS': {
             'timeout': 20,

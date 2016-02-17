@@ -15,7 +15,7 @@ urlpatterns = [
                   url(settings.ADMIN_URL, include(admin.site.urls)),
 
                   # Your stuff: custom urls includes go here
-                  url(r'^', include("wyvern.wyvern.urls", namespace="wyvern")),
+                  url(r'^', include("anychat.anychat.urls", namespace="anychat")),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

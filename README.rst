@@ -1,4 +1,4 @@
-Wyvern
+Anychat
 ======
 
 [Coggle - feature map](https://coggle.it/diagram/548413a31a151b440c19fa6e)
@@ -59,7 +59,7 @@ To install the test runner::
 
   $ pip install hitch
 
-To run the tests, enter the wyvern/tests directory and run the following commands::
+To run the tests, enter the anychat/tests directory and run the following commands::
 
   $ hitch init
 

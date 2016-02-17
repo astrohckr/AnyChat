@@ -1,5 +1,5 @@
-cp ~/pgsql/wyvern/pg_hba.conf ~/pg_hba.conf
-rm ~/pgsql/wyvern/ -r
-initdb -D /home/ryan/pgsql/wyvern
-cp ~/pg_hba.conf /home/ryan/pgsql/wyvern
+cp ~/pgsql/anychat/pg_hba.conf ~/pg_hba.conf
+rm ~/pgsql/anychat/ -r
+initdb -D /home/ryan/pgsql/anychat
+cp ~/pg_hba.conf /home/ryan/pgsql/anychat
 

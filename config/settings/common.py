@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Django settings for Wyvern project.
+Django settings for Anychat project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
@@ -14,7 +14,7 @@ import os
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
-APPS_DIR = ROOT_DIR.path('wyvern')
+APPS_DIR = ROOT_DIR.path('anychat')
 
 env = environ.Env()
 
@@ -37,7 +37,7 @@ THIRD_PARTY_APPS = ['crispy_forms',
                     'ws4redis', ]
 
 # Apps specific for this project go here.
-LOCAL_APPS = ['wyvern.wyvern']
+LOCAL_APPS = ['anychat.anychat']
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -54,7 +54,7 @@ MIDDLEWARE_CLASSES = ['django.contrib.sessions.middleware.SessionMiddleware',
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-    'sites': 'wyvern.contrib.sites.migrations'
+    'sites': 'anychat.contrib.sites.migrations'
 }
 
 # DEBUG
@@ -84,7 +84,7 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres:///wyvern"),
+    'default': env.db("DATABASE_URL", default="postgres:///anychat"),
 }
 
 DATABASES['default']['ATOMIC_REQUESTS'] = True

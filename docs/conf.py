@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Wyvern documentation build configuration file, created by
+# Anychat documentation build configuration file, created by
 # sphinx-quickstart.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -41,7 +41,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Wyvern'
+project = u'Anychat'
 copyright = u"2015, Ryan Mirman"
 
 # The version info for the project you're documenting, acts as replacement for
@@ -165,7 +165,7 @@ html_static_path = ['_static']
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'wyverndoc'
+htmlhelp_basename = 'anychatdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -185,8 +185,8 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
     ('index',
-     'wyvern.tex',
-     u'Wyvern Documentation',
+     'anychat.tex',
+     u'Anychat Documentation',
      u"Ryan Mirman", 'manual'),
 ]
 
@@ -216,7 +216,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'wyvern', u'Wyvern Documentation',
+    ('index', 'anychat', u'Anychat Documentation',
      [u"Ryan Mirman"], 1)
 ]
 
@@ -230,8 +230,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'wyvern', u'Wyvern Documentation',
-     u"Ryan Mirman", 'Wyvern',
+    ('index', 'anychat', u'Anychat Documentation',
+     u"Ryan Mirman", 'Anychat',
      'A short description of the project.', 'Miscellaneous'),
 ]
 

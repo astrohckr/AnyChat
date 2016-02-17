@@ -1,5 +1,5 @@
 {
-  "name": "wyvern",
+  "name": "anychat",
   "description": "A short description of the project.",
   "env": {
     "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-python",

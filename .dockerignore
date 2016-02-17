@@ -6,7 +6,7 @@ node_modules/
 tests/
 staticfiles/
 venv/
-wyvern.db
+anychat.db
 
 .travis.yml
 env.example

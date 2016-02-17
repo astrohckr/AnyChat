@@ -45,12 +45,12 @@ class ExecutionEngine(hitchtest.ExecutionEngine):
             shutdown_timeout=5.0,
         )
 
-        postgres_user = hitchpostgres.PostgresUser("wyvern", "password")
+        postgres_user = hitchpostgres.PostgresUser("anychat", "password")
 
         self.services['Postgres'] = hitchpostgres.PostgresService(
             postgres_package=postgres_package,
             users=[postgres_user, ],
-            databases=[hitchpostgres.PostgresDatabase("wyvern", postgres_user), ]
+            databases=[hitchpostgres.PostgresDatabase("anychat", postgres_user), ]
         )
 
         self.services['HitchSMTP'] = hitchsmtp.HitchSMTPService(port=1025)
