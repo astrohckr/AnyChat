@@ -53,21 +53,28 @@ DEBUG_TOOLBAR_CONFIG = {
 
 # django-extensions
 # ------------------------------------------------------------------------------
-INSTALLED_APPS += ('django_extensions', )
+INSTALLED_APPS += ('django_extensions',)
 
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'wyvern',
-        'USER': 'ryan',
-        'HOST': '138.87.178.144',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': './wyvern.db',
         'ATOMIC_REQUESTS': True,
-    }
+        'OPTIONS': {
+            'timeout': 20,
+        }
+    },
 }
+
+# CORS
+# ------------------------------------------------------------------------------
+# MIDDLEWARE_CLASSES += ['corsheaders.middleware.CorsMiddleware',
+#                        'django.middleware.common.CommonMiddleware', ]
+# INSTALLED_APPS += ['corsheaders', ]
+# CORS_ORIGIN_ALLOW_ALL = True
 
 # TESTING
 # ------------------------------------------------------------------------------

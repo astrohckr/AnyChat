@@ -50,12 +50,26 @@ $red: #b94a48;
   display: block !important;
 }
 
+//--------------------------------------------------------
+
+.navbar {
+  margin: 0;
+}
+
 #navbar {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
 
+  margin: 0;
+}
+
+body {
+  padding-top: 70px;
+}
+
+.row {
   margin: 0;
 }
 

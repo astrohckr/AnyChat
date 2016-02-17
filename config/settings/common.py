@@ -26,19 +26,18 @@ DJANGO_APPS = ['django.contrib.auth',
                'django.contrib.sites',
                'django.contrib.messages',
                'django.contrib.staticfiles',
-               'django.contrib.gis',
 
                # Useful template tags:
                # 'django.contrib.humanize',
 
                # Admin
+               'suit',
                'django.contrib.admin', ]
-THIRD_PARTY_APPS = ['crispy_forms', ]
+THIRD_PARTY_APPS = ['crispy_forms',
+                    'ws4redis', ]
 
 # Apps specific for this project go here.
-LOCAL_APPS = ['wyvern.chat',
-              'wyvern.users',
-              'wyvern.world', ]
+LOCAL_APPS = ['wyvern.wyvern']
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -87,6 +86,7 @@ DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
     'default': env.db("DATABASE_URL", default="postgres:///wyvern"),
 }
+
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
@@ -185,14 +185,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
-AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
-                           'allauth.account.auth_backends.AuthenticationBackend', ]
+# AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',]
 
 # Some really nice defaults
 
 # Custom user app defaults
 # Select the correct user model
-AUTH_USER_MODEL = 'users.User'
+# AUTH_USER_MODEL = 'users.User'
 
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
@@ -251,3 +250,10 @@ LOGGING = {
 ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
+
+
+# DJANGO WEBSOCKET REDIS
+# https://django-websocket-redis.readthedocs.org/en/latest/index.html
+# ------------------------------------------------------------------------------
+WEBSOCKET_URL = '/ws/'
+WS4REDIS_HEARTBEAT = '--heartbeat--'

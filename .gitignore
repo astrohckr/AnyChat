@@ -21,7 +21,6 @@ sftp-config.json
 
 # Basics
 *.py[cod]
-*.pyc
 __pycache__
 
 # Logs
@@ -54,8 +53,29 @@ node_modules/
 .sass-cache
 
 # virtual environments
-.env
 venv/
 
 # User-uploaded media
-wyvern/media/
+speakeazy/media/
+
+# Hitch directory
+tests/.hitch
+
+# MailHog binary
+mailhog
+
+# Recording files
+recordings/*/*
+!recordings/**/.gitkeep
+
+# Static files
+staticfiles/
+wyvern/static/sass/build.scss
+wyvern/static/css/build.css
+
+
+#Production Files
+.env
+.env.sh
+config/settings/production.py
+wyvern.db
