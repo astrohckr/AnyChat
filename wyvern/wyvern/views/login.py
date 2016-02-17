@@ -24,6 +24,8 @@ def login(request):
     longitude = request.POST['lon']
     latitude = request.POST['lat']
 
+    user = None
+
     # create the point
     point = Point()
     point.latitude = latitude
@@ -32,12 +34,12 @@ def login(request):
 
     # get or create the user
     if is_valid_uuid(user_id):
-        user = User.objects.filter(uuid=user_id)
+        user_query = User.objects.filter(uuid=user_id)
 
-        if user.count() > 0:
-            user = user.get()
+        if user_query.count() > 0:
+            user = user_query.get()
 
-    else:
+    if not user:
         user = User()
 
     # set the new point
