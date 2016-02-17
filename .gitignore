@@ -56,7 +56,7 @@ node_modules/
 venv/
 
 # User-uploaded media
-speakeazy/media/
+anychat/media/
 
 # Hitch directory
 tests/.hitch
@@ -64,9 +64,6 @@ tests/.hitch
 # MailHog binary
 mailhog
 
-# Recording files
-recordings/*/*
-!recordings/**/.gitkeep
 
 # Static files
 staticfiles/

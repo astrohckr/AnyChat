@@ -1,0 +1,36 @@
+
+body {
+}
+
+.section {
+  height: 100vh;
+  padding-top: 60px; // size of navbar
+}
+
+#title {
+  background: url(http://cc0.photo/wp-content/uploads/2015/07/D%C3%BCsseldorf-at-night-No.1.jpg) no-repeat fixed center center;
+  background-size: cover;
+  //background-color: rgba(0, 0, 0, 0.2);
+
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: white;
+    padding-top: 10%;
+    font-size: 500%;
+  }
+}
+
+.about {
+  background: white;
+  padding-left: 40px;
+  padding-right: 20px;
+
+}
+
+h1 {
+  //font-family: Copperplate Gothic Light;
+}
+
+h4 {
+  //font-family: Copperplate Gothic Light;
+}

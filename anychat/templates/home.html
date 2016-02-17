@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}{% load i18n %}
+
+
+{% block nav %}
+  <nav class="grey darken-3" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="{% url 'home' %}" class="brand-logo">Anychat</a>
+      {#      <ul class="right hide-on-med-and-down">#}
+      {#        <li><a href=""></a></li>#}
+      {#      </ul>#}
+
+      {#      <ul id="nav-mobile" class="side-nav">#}
+      {#        <li><a href="">Navbar Link</a></li>#}
+      {#      </ul>#}
+      {#      <a href="" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>#}
+    </div>
+  </nav>
+{% endblock nav %}
+
+
+{% block content %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center red-text">Anychat</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A modern group chat for all of your friends and friends to be</h5>
+      </div>
+      <div class="row center">
+        <a href="{% url 'anychat:list' %}" id="download-button" class="btn-large waves-effect waves-light deep-orange">Start
+          Chatting</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center red-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Random Conversation</h5>
+
+            <p class="light">Anychat has group chats of endless variety. Each chat you join is different than the last.
+              Other buzzwords.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center red-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Local People</h5>
+
+            <p class="light">When you use Anychat, you will have access to group chats made by people around you. Joining
+              a chat may mean seeing someone you know, maybe an old friend, possibly an acquaintance, who knows. Or,
+              maybe not. You may meet some really cool people while you are here.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center red-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Private and Secure</h5>
+
+            <p class="light">If anyone wants our data, we have nothing to give out. User accounts are just an id and
+              coordinate pair tied to a session. In other words, when you clear your session and localStorage data, your
+              account is deleted. In the case that you do send us something private, communication is encrypted with
+              modern TLS (HTTPS).</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer red darken-1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col l6 s12">
+          <h5 class="white-text">Anychat</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our
+            full time job. Any amount would help support and continue development on this project and is greatly
+            appreciated.</p>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="">Link 1</a></li>
+            <li><a class="white-text" href="">Link 2</a></li>
+            <li><a class="white-text" href="">Link 3</a></li>
+            <li><a class="white-text" href="">Link 4</a></li>
+          </ul>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="">Link 1</a></li>
+            <li><a class="white-text" href="">Link 2</a></li>
+            <li><a class="white-text" href="">Link 3</a></li>
+            <li><a class="white-text" href="">Link 4</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+{% endblock content %}

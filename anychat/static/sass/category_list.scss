@@ -1,0 +1,18 @@
+.category-list {
+  width: 95%;
+  margin: auto;
+
+  .add-group {
+    border: dashed 2px #ECF0F1;
+    background: none;
+
+    h4 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .joinable-group {
+    margin-left: 22px;
+  }
+}
