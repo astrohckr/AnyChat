@@ -1,21 +1,23 @@
+from anychat.anychat.models import Group, Category, Point
+from django.core.urlresolvers import reverse
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
-from vanilla.model_views import DetailView, CreateView
-from anychat.anychat import models
-from anychat.anychat.models import Group, User, Category
+from django.views.generic.base import TemplateView
+from vanilla.model_views import CreateView
 
 
-class GroupDetail(DetailView):
-    model = Group
+class GroupChat(TemplateView):
+    template_name = 'anychat/group_chat.html'
 
-    def get(self, request, *args, **kwargs):
-        return_value = super(GroupDetail, self).get(request)
+    def get_context_data(self, **kwargs):
+        if 'view' not in kwargs:
+            kwargs['view'] = self
 
-        session_key = request.session.session_key
-        user = User(group=self.object, session=session_key)
+        category = kwargs['category']
+        group = kwargs['group']
+        kwargs['group'] = Group.objects.filter(category__slug=category, slug=group).get()
 
-        user.save()  # save to DB
-        self.object.save()
-        return return_value
+        return kwargs
 
 
 class GroupCreate(CreateView):
@@ -23,12 +25,17 @@ class GroupCreate(CreateView):
     fields = ['name', 'description']
 
     def form_valid(self, form):
+        point = Point()
+        point.longitude = self.request.session['point']['longitude']
+        point.latitude = self.request.session['point']['latitude']
+        point.save()
+
         form.instance.category = get_object_or_404(Category, name=self.kwargs.get('category'))
-        form.instance.slug = models.next_slug()
-        form.instance.point = 'POINT(0.0 0.0)'
-        return super(GroupCreate, self).form_valid(form)
+        form.instance.point = point
+
+        self.object = form.save()
+        return HttpResponseRedirect(self.get_success_url())
 
     def get_success_url(self):
-        category = self.object.category.name
         group = self.object.slug
-        return '/chat/%s/%s' % (category, group)
+        return reverse('anychat:group_chat', kwargs={'category': group.category.slug, 'group': group.slug})

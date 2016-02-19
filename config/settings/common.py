@@ -145,6 +145,7 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 # Your stuff: custom template context processors go here
+                'ws4redis.context_processors.default',
             ],
         },
     },
@@ -256,4 +257,4 @@ ADMIN_URL = r'^admin/'
 # https://django-websocket-redis.readthedocs.org/en/latest/index.html
 # ------------------------------------------------------------------------------
 WEBSOCKET_URL = '/ws/'
-WS4REDIS_HEARTBEAT = '--heartbeat--'
+WS4REDIS_HEARTBEAT = '--heartbeat--'  # '{"eventName":"--heartbeat--"}'

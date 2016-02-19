@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load static %}{% load i18n %}
+{% block title %}{{ group.name }}{% endblock %}
+
+{% block extrascripts %}
+  <link href="{% static 'css/group_detail.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+  <div id="content" class="row-fluid">
+
+    <div id="videos" class="col-lg-10 col-md-9 col-sm-12 col-xs-12"></div>
+
+    <div id="chat" class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
+      <div id="messages">
+        <div class="message server">
+          <div class="user">Server</div>
+          <div class="text">Welcome to {{ group.name }}, type '/help' for server commands</div>
+        </div>
+      </div>
+      <div id="input">
+        <textarea id="text-box"></textarea>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+
+
+{% block extraendscripts %}
+  <script type="text/javascript" src="{{ STATIC_URL }}js/ws4redis.js"></script>
+
+  <script type="text/javascript">
+    var action = 'open';//'{{ action }}';
+    var group = '{{ group.pk }}';
+    var socketUri = '{{ WEBSOCKET_URI }}{{ group.pk }}?publish-broadcast&echo'; //subscribe-broadcast&;
+    var heartbeat = {{ WS4REDIS_HEARTBEAT }};
+  </script>
+
+  <script src="{% static 'js/rmc3.js' %}"></script>
+  <script src="{% static 'js/anychat_connection.js' %}"></script>
+  <script src="{% static 'js/group_chat.js' %}"></script>
+{% endblock %}

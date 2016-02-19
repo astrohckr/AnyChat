@@ -18,21 +18,21 @@ urlpatterns = [
     ),
 
     url(
-        regex=r'^chat/(?P<name>\w+)/$',
+        regex=r'^chat/(?P<category>\w+)/$',
         view=categories.CategoryDetail.as_view(),
-        name='categoryDetail'
+        name='category_detail'
     ),
 
     url(
         regex=r'^chat/(?P<category>\w+)/create-group$',
         view=groups.GroupCreate.as_view(),
-        name='groupCreate'
+        name='group_create'
     ),
 
     url(
-        regex=r'^chat/(?P<category>\w+)/group/(?P<slug>\w+)$',
-        view=groups.GroupDetail.as_view(),
-        name='groupDetail'
+        regex=r'^chat/(?P<category>\w+)/group/(?P<group>\w+)$',
+        view=groups.GroupChat.as_view(),
+        name='group_chat'
     ),
 
     # url(r'^groups/', include("anychat.anychat.views.groups", namespace="groups")),
